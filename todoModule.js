@@ -1,6 +1,6 @@
 // creating/converting into IIFE function
 
-(function () { // IIFE js module-- wrapping full code function into one -- function scope
+var toDoListApp = (function () { // IIFE js module-- wrapping full code function into one -- function scope
     //api's creation in javascript--To do list app
 
     let tasks = [];
@@ -180,7 +180,14 @@
         document.addEventListener('click',handleClickListener);
     }
 
-    initializeApp();
+    // initializeApp();
+
+    //returning an object -- putting the funtions and everything in return which we have to make public
+    return {
+        initializeApp : initializeApp
+    }
 
 })() // last () = invoking function
+
+
 
